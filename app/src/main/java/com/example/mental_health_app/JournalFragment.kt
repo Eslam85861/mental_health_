@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.chaquo.python.Python
 import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,6 +24,7 @@ class JournalFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+            val random :Array<Array<Any>> =random()
         }
     }
 
@@ -32,5 +34,31 @@ class JournalFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_journal, container, false)
+    }
+
+
+    private fun random(): Array<Array<Any>> {
+
+        val python = Python.getInstance()
+        val pythonFile = python.getModule("functions")
+        return pythonFile.callAttr("Random_Recommendations").toJava(Array<Array<Any>>::class.java)
+        //return pythonFile.callAttr("mai2n",2).toJava(ArrayList<String>)
+
+    }
+    private fun recommend(): Array<Array<Any>> {
+
+        val python = Python.getInstance()
+        val pythonFile = python.getModule("functions")
+        return pythonFile.callAttr("Best_recommendations").toJava(Array<Array<Any>>::class.java)
+        //return pythonFile.callAttr("mai2n",2).toJava(ArrayList<String>)
+
+    }
+    private fun best(): Array<Array<Any>> {
+
+        val python = Python.getInstance()
+        val pythonFile = python.getModule("functions")
+        return pythonFile.callAttr("Best_recommendations").toJava(Array<Array<Any>>::class.java)
+        //return pythonFile.callAttr("mai2n",2).toJava(ArrayList<String>)
+
     }
 }

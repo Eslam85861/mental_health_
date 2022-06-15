@@ -8,6 +8,7 @@ import com.chaquo.python.Python
 import com.example.mental_health_app.databinding.ActivityQuotesBinding
 
 class QuotesActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityQuotesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +17,7 @@ class QuotesActivity : AppCompatActivity() {
         binding.author.text =author()
 
 
-        val random :Array<Array<Any>> =random()
+       // val random :Array<Array<Any>> =random()
 
        // binding.info.text = random[0][9].toString()
         binding.info.text =info()
@@ -50,7 +51,7 @@ class QuotesActivity : AppCompatActivity() {
 
         val python = Python.getInstance()
         val pythonFile = python.getModule("functions")
-        return pythonFile.callAttr("Random_Recommendations").toJava(Array<Array<Any>>::class.java)
+        return pythonFile.callAttr("Best_recommendations").toJava(Array<Array<Any>>::class.java)
         //return pythonFile.callAttr("mai2n",2).toJava(ArrayList<String>)
 
     }

@@ -12,7 +12,7 @@ filename = join(dirname(__file__), "Books.csv")
 df = pd.read_csv(filename, encoding = 'unicode_escape', low_memory=False)
 
 def Random_Recommendations():
-    random_df= df.sample(n=100)
+    random_df= df.sample(n=5)
     random_list = random_df.values.tolist()
 
     #list_array =np.asarray( random_list)
@@ -37,9 +37,9 @@ def Best_Dataframe():
 
 def Best_recommendations():
     q_Books = Best_Dataframe()
-    best_df = q_Books.head(1)
+    best_df = q_Books.head(5)
     random_df_to_numpy = best_df.to_numpy()
-    return random_df_to_numpy[0];
+    return random_df_to_numpy;
 
 q_Books = Best_Dataframe()
 tfidf = TfidfVectorizer(stop_words='english')
@@ -69,4 +69,4 @@ def mai2n ():
  return (Matrix)
 
 #print( mai2n())
-#print( Random_Recommendations())
+#print( get_recommendations("title", cosine_sim=cosine_sim))
