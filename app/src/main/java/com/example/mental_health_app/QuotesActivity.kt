@@ -1,14 +1,11 @@
 package com.example.mental_health_app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.chaquo.python.PyObject
 import com.chaquo.python.Python
-import com.chaquo.python.android.AndroidPlatform
-
 import com.example.mental_health_app.databinding.ActivityQuotesBinding
-import kotlinx.android.synthetic.main.activity_chat.*
-import kotlinx.android.synthetic.main.activity_quotes.*
 
 class QuotesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuotesBinding
@@ -17,6 +14,11 @@ class QuotesActivity : AppCompatActivity() {
         binding = ActivityQuotesBinding.inflate(layoutInflater)
         binding.quotes.text =quotes()
         binding.author.text =author()
+
+
+        val random :Array<Array<Any>> =random()
+
+       // binding.info.text = random[0][9].toString()
         binding.info.text =info()
         val view: View = binding.root
         setContentView(view)
@@ -40,7 +42,22 @@ class QuotesActivity : AppCompatActivity() {
 
         val python = Python.getInstance()
         val pythonFile = python.getModule("Did_You_Know")
+
         return pythonFile.callAttr("information").toString()
     }
+
+    private fun random(): Array<Array<Any>> {
+
+        val python = Python.getInstance()
+        val pythonFile = python.getModule("functions")
+        return pythonFile.callAttr("Random_Recommendations").toJava(Array<Array<Any>>::class.java)
+        //return pythonFile.callAttr("mai2n",2).toJava(ArrayList<String>)
+
+    }
+
+
+
+
+
 
 }
