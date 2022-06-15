@@ -43,7 +43,7 @@
                 android:id="@+id/tv_yoga_steps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/steps"
+                android:text="Steps"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
