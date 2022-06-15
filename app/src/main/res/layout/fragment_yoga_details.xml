@@ -2,8 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".yoga_details.view.YogaDetailsFragment">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -55,7 +54,7 @@
                 android:layout_margin="6dp"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:layout_marginBottom="50dp"/>
+                android:layout_marginBottom="250dp"/>
 
         </LinearLayout>
     </ScrollView>

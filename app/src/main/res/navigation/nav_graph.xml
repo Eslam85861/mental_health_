@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_navigation_yoga_to_navigation_settings"
             app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_yoga_to_navigation_yoga_details"
+            app:destination="@id/navigation_yoga_details" />
     </fragment>
     <fragment
         android:id="@+id/navigation_journal"
@@ -51,4 +54,10 @@
         tools:layout="@layout/fragment_settings"
         />
 
+    <fragment
+        android:id="@+id/navigation_yoga_details"
+        android:name="com.example.mental_health_app.yoga_details.view.YogaDetailsFragment"
+        android:label="YogaItemDetails"
+        tools:layout="@layout/fragment_yoga_details"
+        />
 </navigation>

@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import com.example.mental_health_app.databinding.FragmentYogaDetailsBinding
 import com.example.mental_health_app.yoga.model.YogaModel
@@ -36,13 +35,13 @@ class YogaDetailsFragment : Fragment() {
     }
 
      private fun observeViewModel(){
-        viewModel.yoga.observe(viewLifecycleOwner, {
+        viewModel.yoga.observe(viewLifecycleOwner) {
             setYoga(it)
-            binding.tvYogaName.text= yogadetails?.yogaName
-            binding.tvYogaDescription.text= yogadetails?.yogaDescription
+            binding.tvYogaName.text = yogadetails?.yogaName
+            binding.tvYogaDescription.text = yogadetails?.yogaDescription
             binding.ivYoga.setImageResource(yogadetails!!.yogaImage)
-            binding.tvSteps.text=yogadetails?.steps
-        })
+            binding.tvSteps.text = yogadetails?.steps
+        }
 
-    }
+     }
 }

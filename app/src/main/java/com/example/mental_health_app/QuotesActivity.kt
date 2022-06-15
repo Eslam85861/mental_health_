@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.chaquo.python.Python
-import com.chaquo.python.android.AndroidPlatform
 
 import com.example.mental_health_app.databinding.ActivityQuotesBinding
 import kotlinx.android.synthetic.main.activity_chat.*
