@@ -1,6 +1,7 @@
 package com.example.mental_health_app.yoga.model
 
-import android.graphics.drawable.Drawable
-import android.media.Image
+import java.util.*
 
-data class YogaModel(val yogaName: String , val yogaDescription: String , val yogaImage: Int)
+
+data class YogaModel(val id: Int, val yogaName: String , val yogaDescription: String ,
+                     val yogaImage: Int , val steps: String)
