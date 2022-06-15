@@ -25,6 +25,8 @@ class JournalFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
             val random :Array<Array<Any>> =random()
+            val best :Array<Array<Any>> =best()
+            val recommend :Array<Array<Any>> =recommend()
         }
     }
 
