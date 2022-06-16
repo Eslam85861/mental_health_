@@ -27,6 +27,7 @@ class JournalFragment : Fragment() {
             val random :Array<Array<Any>> =random()
             val best :Array<Array<Any>> =best()
             val recommend :Array<Array<Any>> =recommend()
+            //
         }
     }
 
